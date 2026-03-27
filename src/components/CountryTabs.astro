@@ -1,0 +1,65 @@
+---
+interface Country {
+  tab: string;
+  role: string;
+  body: string;
+}
+
+interface Props {
+  countries: Country[];
+}
+
+const { countries } = Astro.props;
+---
+
+<div class="country-tabs">
+  <ul class="tab-labels" role="tablist">
+    {countries.map((country, i) => (
+      <li
+        class:list={['tab-label', { active: i === 0 }]}
+        role="tab"
+        aria-selected={i === 0 ? 'true' : 'false'}
+        data-tab={i}
+        tabindex={i === 0 ? 0 : -1}
+      >
+        {country.tab}
+      </li>
+    ))}
+  </ul>
+
+  {countries.map((country, i) => (
+    <div
+      class:list={['tab-panel', { active: i === 0 }]}
+      role="tabpanel"
+      data-panel={i}
+    >
+      <p class="tab-role">{country.role}</p>
+      <p class="tab-body">{country.body}</p>
+    </div>
+  ))}
+</div>
+
+<script>
+  const labels = document.querySelectorAll<HTMLElement>('.tab-label');
+  const panels = document.querySelectorAll<HTMLElement>('.tab-panel');
+
+  labels.forEach((label) => {
+    label.addEventListener('click', () => {
+      const idx = label.dataset.tab;
+
+      labels.forEach((l) => {
+        l.classList.remove('active');
+        l.setAttribute('aria-selected', 'false');
+        l.tabIndex = -1;
+      });
+      panels.forEach((p) => p.classList.remove('active'));
+
+      label.classList.add('active');
+      label.setAttribute('aria-selected', 'true');
+      label.tabIndex = 0;
+      document
+        .querySelector<HTMLElement>(`.tab-panel[data-panel="${idx}"]`)
+        ?.classList.add('active');
+    });
+  });
+</script>
