@@ -1,0 +1,27 @@
+---
+---
+<nav id="sticky-nav" class="sticky-nav" aria-label="Section navigation">
+  <a href="#hero" class="sticky-nav-name">juliana meyer</a>
+  <ul class="sticky-nav-links">
+    <li><a href="#tech-writing">How does this work?</a></li>
+    <li><a href="#community">Where is everyone?</a></li>
+    <li><a href="#podcast">How do others do this?</a></li>
+    <li><a href="#case-studies">Why should people use this?</a></li>
+    <li><a href="#building-now">What am I building now?</a></li>
+  </ul>
+</nav>
+
+<script>
+  const nav = document.getElementById('sticky-nav');
+  const hero = document.getElementById('hero');
+
+  if (nav && hero) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        nav.classList.toggle('visible', !entry.isIntersecting);
+      },
+      { threshold: 0 }
+    );
+    observer.observe(hero);
+  }
+</script>

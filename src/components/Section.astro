@@ -1,0 +1,103 @@
+---
+interface Props {
+  id: string;
+  order?: number;
+  question: string;
+  subtitle: string;
+  icon: string;
+  stat?: string;
+  statLabel?: string;
+  links?: { text: string; url: string }[];
+  imagePlaceholders?: { label: string; wide?: boolean }[];
+  // Extra fields from content schema — not used in template but accepted via spread
+  caseStudies?: unknown;
+  countries?: unknown;
+}
+
+const {
+  id,
+  question,
+  subtitle,
+  icon,
+  stat,
+  statLabel,
+  links = [],
+  imagePlaceholders = [],
+} = Astro.props;
+
+const isSingleColumn = imagePlaceholders.length === 0;
+---
+
+<section id={id} class="section">
+  <div class="section-icon" aria-hidden="true">
+    {icon === 'star-outline' && (
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+        <path d="M24 6 L27 19 L40 24 L27 29 L24 42 L21 29 L8 24 L21 19 Z" stroke="#8a5a44" stroke-width="1.2" fill="none"/>
+        <circle cx="24" cy="24" r="3" fill="#f48eb8"/>
+      </svg>
+    )}
+    {icon === 'asterisk' && (
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+        <path d="M24 8 L24 40 M8 24 L40 24 M11 11 L37 37 M37 11 L11 37" stroke="#8a5a44" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    )}
+    {icon === 'sine-wave' && (
+      <svg width="48" height="36" viewBox="0 0 48 36" fill="none">
+        <path d="M2 18 Q10 4 18 18 Q26 32 34 18 Q42 4 46 18" stroke="#8a5a44" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      </svg>
+    )}
+    {icon === 'star-filled' && (
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+        <path d="M24 4 L28.5 17.5 L42 24 L28.5 30.5 L24 44 L19.5 30.5 L6 24 L19.5 17.5 Z" fill="#f48eb8" opacity="0.9"/>
+      </svg>
+    )}
+    {icon === 'stacked-rects' && (
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+        <rect x="8" y="16" width="14" height="22" rx="3" stroke="#8a5a44" stroke-width="1.2"/>
+        <rect x="26" y="10" width="14" height="28" rx="3" stroke="#f48eb8" stroke-width="1.2"/>
+      </svg>
+    )}
+    {icon === 'globe' && (
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+        <circle cx="24" cy="24" r="18" stroke="#8a5a44" stroke-width="1.2"/>
+        <path d="M6 24 Q15 18 24 24 Q33 30 42 24" stroke="#8a5a44" stroke-width="1.2" fill="none"/>
+        <path d="M6 24 Q15 30 24 24 Q33 18 42 24" stroke="#8a5a44" stroke-width="1.2" fill="none"/>
+      </svg>
+    )}
+  </div>
+
+  <h2 class="section-q">{question}</h2>
+  <p class="section-sub">{subtitle}</p>
+
+  {stat && <div class="section-stat">{stat}</div>}
+  {statLabel && <p class="section-stat-label">{statLabel}</p>}
+
+  <div class:list={['section-body', { 'section-body--single': isSingleColumn }]}>
+    <div>
+      <div class="section-text">
+        <slot />
+      </div>
+      {links.length > 0 && (
+        <div class="section-links">
+          {links.map((link) => (
+            <a href={link.url} target="_blank" rel="noopener noreferrer">
+              {link.text} ↗
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+
+    {!isSingleColumn && (
+      <div class="section-visual">
+        {imagePlaceholders.map((img, i) => (
+          <div class:list={['img-placeholder', { narrow: i > 0 && !img.wide }]}>
+            {img.label}
+          </div>
+        ))}
+      </div>
+    )}
+  </div>
+
+  <slot name="extra" />
+</section>
