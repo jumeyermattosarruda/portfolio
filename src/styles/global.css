@@ -39,9 +39,9 @@ body {
 }
 
 .topbar-logo {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 15px;
-  font-weight: 300;
+  font-weight: 400;
   font-style: italic;
   color: var(--color-espresso);
   letter-spacing: 0.03em;
@@ -103,9 +103,9 @@ body {
 }
 
 .hero-name {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 68px;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--color-espresso);
   line-height: 1.0;
   letter-spacing: -0.01em;
@@ -113,9 +113,9 @@ body {
 }
 
 .hero-tagline {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 15px;
-  font-weight: 300;
+  font-weight: 400;
   font-style: italic;
   color: var(--color-caramel);
   line-height: 1.5;
@@ -141,25 +141,29 @@ body {
 /* ─── Clusters ───────────────────────────────────────────────────────────── */
 .cluster {
   position: absolute;
-  text-align: left;
+  text-align: center;
   cursor: pointer;
   transition: transform 0.35s ease;
   z-index: 6;
-  width: 160px;
+  width: 190px;
   text-decoration: none;
   color: inherit;
 }
 
 .cluster:hover { transform: translateY(-5px); }
 
-.cluster-icon { margin-bottom: 10px; }
+.cluster-icon {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
 
 .cluster-q {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 17px;
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
   font-weight: 400;
   color: var(--color-espresso);
-  line-height: 1.25;
+  line-height: 1.2;
   margin-bottom: 5px;
 }
 
@@ -171,19 +175,23 @@ body {
   line-height: 1.5;
 }
 
-.cl-tl { top: 90px;      left: 80px;  }
-.cl-tr { top: 80px;      right: 80px; }
-.cl-ml { top: 42%;       left: 48px;  }
-.cl-bl { bottom: 100px;  left: 80px;  }
-.cl-br { bottom: 90px;   right: 80px; }
+.cl-tl { top: 90px;     left: 80px;        }
+.cl-tr { top: 80px;     right: 80px;       }
+.cl-ml { top: 34%;      left: 48px;        }
+.cl-bl { bottom: 100px; left: 28%;         }
+.cl-br { bottom: 90px;  right: 80px;       }
 
-/* ─── Hero pill ──────────────────────────────────────────────────────────── */
-.hero-pill-wrap {
+/* ─── Hero bottom (pill + scroll hint) ───────────────────────────────────── */
+.hero-bottom-wrap {
   position: absolute;
   bottom: 24px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
 .pill {
@@ -222,8 +230,9 @@ body {
 }
 
 .sticky-nav-name {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Playfair Display', serif;
   font-style: italic;
+  font-weight: 400;
   font-size: 14px;
   color: var(--color-espresso);
   text-decoration: none;
@@ -237,15 +246,31 @@ body {
 }
 
 .sticky-nav-links a {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  text-decoration: none;
+}
+
+.nav-q {
   font-size: 11px;
   font-weight: 300;
   color: var(--color-caramel);
   letter-spacing: 0.04em;
-  text-decoration: none;
   transition: color 0.2s;
 }
 
-.sticky-nav-links a:hover { color: var(--color-espresso); }
+.nav-sub {
+  font-size: 9px;
+  font-weight: 300;
+  color: var(--color-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.sticky-nav-links a:hover .nav-q,
+.sticky-nav-links a:hover .nav-sub { color: var(--color-espresso); }
 
 /* ─── Sections ───────────────────────────────────────────────────────────── */
 .section {
@@ -256,9 +281,9 @@ body {
 .section-icon { margin-bottom: 10px; }
 
 .section-q {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 52px;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--color-espresso);
   line-height: 1.1;
   margin-bottom: 10px;
@@ -273,9 +298,9 @@ body {
 }
 
 .section-stat {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 42px;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--color-espresso);
   margin-bottom: 6px;
 }
@@ -341,6 +366,23 @@ body {
   align-items: flex-start;
 }
 
+/* ─── Alternating layout ─────────────────────────────────────────────────── */
+.section-body--reversed .section-left  { order: 2; }
+.section-body--reversed .section-visual { order: 1; }
+
+/* ─── Section images ─────────────────────────────────────────────────────── */
+.section-img {
+  border-radius: 12px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.section-img.narrow {
+  width: 75%;
+}
+
 /* ─── Image Placeholders ─────────────────────────────────────────────────── */
 .img-placeholder {
   background: #f0e6df;
@@ -379,9 +421,9 @@ body {
 }
 
 .case-card-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 20px;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--color-espresso);
 }
 
@@ -527,7 +569,7 @@ body {
   .cluster:hover { transform: translateY(-3px); }
   .cluster-icon { display: none; }
 
-  .hero-pill-wrap {
+  .hero-bottom-wrap {
     position: static;
     transform: none;
     order: 10;

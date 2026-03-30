@@ -8,8 +8,14 @@ stat: "5M+"
 statLabel: "reach in under 30 days, VTEX Vision Spring '24"
 imagePlaceholders:
   - label: "Allocator Pro"
+    src: "images/cases/allocator-pro.png"
+    wide: true
   - label: "VTEX Vision"
+    src: "images/cases/vtex-vision-teaser.gif"
   - label: "Inactive User"
+links:
+  - text: "VTEX Vision Trailer"
+    url: "https://www.youtube.com/watch?v=cNJBDHKKpMg"
 caseStudies:
   - title: "Allocator Pro"
     description: "Built a B2B membership loyalty program from concept to live product: tier architecture, campaign strategy, in-platform experience, and premium event logistics — end to end."
@@ -17,7 +23,7 @@ caseStudies:
     linkLabel: "View project ↗"
   - title: "VTEX Vision Spring '24"
     description: "Sole PMM coordinating a 17-product global launch across 15+ teams and 4 external suppliers. 5M+ reach and 300+ media pieces in under 30 days. (Spoiler: it was one PMM.)"
-    url: "#"
+    url: "https://www.linkedin.com/pulse/from-vision-reality-lessons-learned-launching-17-products-meyer-h3hrf/"
     linkLabel: "Behind the scenes ↗"
   - title: "Inactive User Reengagement Experiment"
     description: "No prior reengagement strategy existed for this user group. Rather than launching a lifecycle campaign blindly, we ran a structured exploration to learn what messaging, format, and value proposition resonates with deeply inactive users — before committing to a full build."

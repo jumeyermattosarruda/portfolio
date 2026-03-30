@@ -1,6 +1,6 @@
 ---
 id: building-now
-order: 7
+order: 6
 question: What am I building now?
 subtitle: "Vibe coding, side quests, crafts, and the ongoing experiment of being human in an AI era."
 icon: sine-wave

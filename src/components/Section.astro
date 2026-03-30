@@ -8,7 +8,8 @@ interface Props {
   stat?: string;
   statLabel?: string;
   links?: { text: string; url: string }[];
-  imagePlaceholders?: { label: string; wide?: boolean }[];
+  imagePlaceholders?: { label: string; src?: string; wide?: boolean }[];
+  reversed?: boolean;
   // Extra fields from content schema — not used in template but accepted via spread
   caseStudies?: unknown;
   countries?: unknown;
@@ -23,9 +24,11 @@ const {
   statLabel,
   links = [],
   imagePlaceholders = [],
+  reversed = false,
 } = Astro.props;
 
 const isSingleColumn = imagePlaceholders.length === 0;
+const base = import.meta.env.BASE_URL;
 ---
 
 <section id={id} class="section">
@@ -72,8 +75,12 @@ const isSingleColumn = imagePlaceholders.length === 0;
   {stat && <div class="section-stat">{stat}</div>}
   {statLabel && <p class="section-stat-label">{statLabel}</p>}
 
-  <div class:list={['section-body', { 'section-body--single': isSingleColumn }]}>
-    <div>
+  <div class:list={[
+    'section-body',
+    { 'section-body--single': isSingleColumn },
+    { 'section-body--reversed': reversed && !isSingleColumn },
+  ]}>
+    <div class="section-left">
       <div class="section-text">
         <slot />
       </div>
@@ -91,9 +98,18 @@ const isSingleColumn = imagePlaceholders.length === 0;
     {!isSingleColumn && (
       <div class="section-visual">
         {imagePlaceholders.map((img, i) => (
-          <div class:list={['img-placeholder', { narrow: i > 0 && !img.wide }]}>
-            {img.label}
-          </div>
+          img.src ? (
+            <img
+              src={`${base}${img.src}`}
+              alt={img.label}
+              loading="lazy"
+              class:list={['section-img', { narrow: i > 0 && !img.wide }]}
+            />
+          ) : (
+            <div class:list={['img-placeholder', { narrow: i > 0 && !img.wide }]}>
+              {img.label}
+            </div>
+          )
         ))}
       </div>
     )}
