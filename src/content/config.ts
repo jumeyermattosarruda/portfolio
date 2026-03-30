@@ -14,7 +14,13 @@ const sections = defineCollection({
       .array(z.object({ text: z.string(), url: z.string() }))
       .optional(),
     imagePlaceholders: z
-      .array(z.object({ label: z.string(), wide: z.boolean().optional() }))
+      .array(
+        z.object({
+          label: z.string(),
+          src: z.string().optional(),
+          wide: z.boolean().optional(),
+        })
+      )
       .optional(),
     caseStudies: z
       .array(

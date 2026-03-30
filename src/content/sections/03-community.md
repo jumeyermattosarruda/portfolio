@@ -12,7 +12,8 @@ links:
   - text: "Community on LinkedIn"
     url: "https://www.linkedin.com/company/techwritingbr/"
 imagePlaceholders:
-  - label: "first meetup screenshot"
+  - label: "Tech Writing BR"
+    src: "images/cases/tech-writing-br.png"
     wide: true
   - label: "community event"
 ---

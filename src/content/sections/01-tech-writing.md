@@ -12,7 +12,8 @@ links:
   - text: "VTEX Developer Portal"
     url: "https://developers.vtex.com"
 imagePlaceholders:
-  - label: "screenshot · DevPortal"
+  - label: "VTEX Dev Portal"
+    src: "images/cases/vtex-dev-portal.gif"
     wide: true
   - label: "award · ceremony"
 ---
