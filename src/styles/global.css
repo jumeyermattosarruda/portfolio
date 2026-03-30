@@ -175,11 +175,11 @@ body {
   line-height: 1.5;
 }
 
-.cl-tl { top: 90px;     left: 80px;                              }
-.cl-tr { top: 80px;     right: 80px;                             }
-.cl-ml { top: 34%;      left: 48px;                              }
-.cl-bl { bottom: 100px; left: calc(50% - 260px);                 }
-.cl-br { bottom: 90px;  right: 80px;                             }
+.cl-tl { top: 90px;     left: 80px;        }
+.cl-tr { top: 80px;     right: 80px;       }
+.cl-ml { top: 34%;      left: 48px;        }
+.cl-bl { bottom: 100px; left: 28%;         }
+.cl-br { bottom: 90px;  right: 80px;       }
 
 /* ─── Hero bottom (pill + scroll hint) ───────────────────────────────────── */
 .hero-bottom-wrap {
