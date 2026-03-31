@@ -2,6 +2,7 @@
 id: abroad
 order: 7
 question: What is out there?
+title: "International Experiences"
 subtitle: "Four countries. Four roles. One skill in common: embrace the unknown and figure it out."
 icon: globe
 stat: "4"
