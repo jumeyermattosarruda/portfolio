@@ -1,7 +1,8 @@
 ---
 id: tech-writing
 order: 1
-question: How does this work?
+question: How does tech work?
+title: "Tech Writing"
 subtitle: "From intern who'd never heard \"API\" to building the developer portal that beat Spotify."
 icon: star-outline
 stat: "35,000+"

@@ -6,6 +6,7 @@ const sections = defineCollection({
     id: z.string(),
     order: z.number(),
     question: z.string(),
+    title: z.string(),
     subtitle: z.string(),
     icon: z.enum(['star-outline', 'asterisk', 'sine-wave', 'star-filled', 'stacked-rects', 'globe']),
     stat: z.string().optional(),

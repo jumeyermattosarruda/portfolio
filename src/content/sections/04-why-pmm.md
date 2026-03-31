@@ -2,6 +2,7 @@
 id: why-pmm
 order: 4
 question: Why Product Marketing?
+title: "The Pivot"
 subtitle: "After four years explaining how products work, I wanted to argue why they matter."
 icon: stacked-rects
 imagePlaceholders:

@@ -2,6 +2,7 @@
 id: case-studies
 order: 5
 question: Why should people use this?
+title: "Product Marketing"
 subtitle: "B2B loyalty programs, global campaigns, and platform adoption — from two very different companies."
 icon: star-filled
 stat: "5M+"

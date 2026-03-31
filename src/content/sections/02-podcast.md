@@ -2,6 +2,7 @@
 id: podcast
 order: 2
 question: How do others do this?
+title: "Podcasting"
 subtitle: "The Manu<script> — exploring the intersection between writing and technology."
 icon: sine-wave
 stat: "30"
