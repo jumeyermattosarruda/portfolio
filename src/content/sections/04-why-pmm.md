@@ -3,6 +3,7 @@ id: why-pmm
 order: 4
 question: Why Product Marketing?
 title: "The Pivot"
+ariaLabel: "Career transition to Product Marketing"
 subtitle: "After four years explaining how products work, I wanted to argue why they matter."
 icon: stacked-rects
 imagePlaceholders:

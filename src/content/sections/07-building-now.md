@@ -3,6 +3,7 @@ id: building-now
 order: 7
 question: What am I building?
 title: "Side Quests"
+ariaLabel: "Side projects and personal work"
 subtitle: "Vibe coding, side quests, crafts, and the ongoing experiment of being human in an AI era."
 icon: sine-wave
 stat: "1"

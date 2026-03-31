@@ -3,6 +3,7 @@ id: abroad
 order: 6
 question: What is out there?
 title: "International Experiences"
+ariaLabel: "International work experience"
 subtitle: "Four countries. Four roles. One skill in common: embrace the unknown and figure it out."
 icon: globe
 stat: "4"

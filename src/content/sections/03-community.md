@@ -3,6 +3,7 @@ id: community
 order: 3
 question: Where is everyone?
 title: "TW Community"
+ariaLabel: "Tech Writing BR community"
 subtitle: "Co-founded Brazil's first — and only — technical writing community."
 icon: asterisk
 stat: "300+"

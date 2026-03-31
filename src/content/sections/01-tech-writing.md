@@ -3,6 +3,7 @@ id: tech-writing
 order: 1
 question: How does tech work?
 title: "Tech Writing"
+ariaLabel: "Technical Writing and Developer Portal"
 subtitle: "From intern who'd never heard \"API\" to building the developer portal that beat Spotify."
 icon: star-outline
 stat: "35,000+"

@@ -1,5 +1,5 @@
 ---
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 <section id="hero" class="hero">
 
@@ -8,11 +8,11 @@ const base = import.meta.env.BASE_URL;
 
     <!-- Name + arch photo -->
     <div class="name-photo-unit">
-      <div class="name-block">
+      <h1 class="name-block">
         <span class="hl-first">Juliana</span>
         <span class="hl-last">Meyer</span>
         <span class="hl-role">Senior Product Marketing Manager</span>
-      </div>
+      </h1>
       <div class="arch-photo">
         <div class="arch-frame">
           <img src={`${base}images/profile/profile-1.jpg`} alt="Juliana Meyer" />
@@ -54,6 +54,7 @@ const base = import.meta.env.BASE_URL;
     </div>
 
     <!-- 6-cell cluster grid -->
+    <nav aria-label="Career chapters">
     <div class="cluster-grid">
 
       <!-- 1 — Product Marketing -->
@@ -65,7 +66,7 @@ const base = import.meta.env.BASE_URL;
           </svg>
         </div>
         <div class="cc-q">"Why should people use this?"</div>
-        <div class="cc-role">Product Marketing</div>
+        <h3 class="cc-role">Product Marketing</h3>
         <div class="cc-cred">VTEX · iConnections · 5M+ reach</div>
       </a>
 
@@ -78,7 +79,7 @@ const base = import.meta.env.BASE_URL;
           </svg>
         </div>
         <div class="cc-q">"Why Product Marketing?"</div>
-        <div class="cc-role">The Pivot</div>
+        <h3 class="cc-role">The Pivot</h3>
         <div class="cc-cred">Tech → GTM · Venn diagram career</div>
       </a>
 
@@ -90,7 +91,7 @@ const base = import.meta.env.BASE_URL;
           </svg>
         </div>
         <div class="cc-q">"Where is everyone?"</div>
-        <div class="cc-role">TW Community</div>
+        <h3 class="cc-role">TW Community</h3>
         <div class="cc-cred">Tech Writing BR · Co-founder · 300+</div>
       </a>
 
@@ -102,7 +103,7 @@ const base = import.meta.env.BASE_URL;
           </svg>
         </div>
         <div class="cc-q">"How do others do this?"</div>
-        <div class="cc-role">Podcasting</div>
+        <h3 class="cc-role">Podcasting</h3>
         <div class="cc-cred">30+ episodes · The Manuscript · Daily PMM</div>
       </a>
 
@@ -114,7 +115,7 @@ const base = import.meta.env.BASE_URL;
           </svg>
         </div>
         <div class="cc-q">"How does tech work?"</div>
-        <div class="cc-role">Tech Writing</div>
+        <h3 class="cc-role">Tech Writing</h3>
         <div class="cc-cred">DevPortal Award · 35K+ devs</div>
       </a>
 
@@ -128,10 +129,11 @@ const base = import.meta.env.BASE_URL;
           </svg>
         </div>
         <div class="cc-q">"What is out there?"</div>
-        <div class="cc-role">International Experiences</div>
+        <h3 class="cc-role">International Experiences</h3>
         <div class="cc-cred">Mexico · Spain · Panama · UK</div>
       </a>
 
     </div><!-- /cluster-grid -->
+    </nav><!-- /career chapters nav -->
   </div><!-- /hero-right -->
 </section>
