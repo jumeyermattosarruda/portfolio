@@ -3,6 +3,7 @@ id: podcast
 order: 2
 question: How do others do this?
 title: "Podcasting"
+ariaLabel: "Podcasting and content creation"
 subtitle: "The Manu<script> — exploring the intersection between writing and technology."
 icon: sine-wave
 stat: "30"
