@@ -24,10 +24,23 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
       </div>
     </div>
 
+    <!-- CTA -->
+    <div class="hero-cta">
+      <a href="https://www.linkedin.com/in/oijulianameyer/" target="_blank" rel="noopener noreferrer" class="cta-primary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+        Connect on LinkedIn
+      </a>
+      <a href="mailto:jumeyermattosarruda@gmail.com" class="cta-secondary">
+        Get in touch ↗
+      </a>
+    </div>
+
     <!-- Tagline + creds -->
     <div class="hl-bottom">
-      <div class="hl-tagline">I help products find their people, and their people understand the product.</div>
-      <div class="hl-creds">DevPortal Award 2023 · 35K+ developers · 5M+ reach</div>
+      <p class="hl-tagline">GTM strategy for 40+ products. DevPortal Award. Tech PMM, fluent in GitHub and positioning.</p>
+      <p class="hl-creds">iConnections · VTEX · DevPortal Award 2023 · 5M+ reach</p>
     </div>
 
     <!-- Easter egg — Side Quests -->
@@ -58,7 +71,7 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
     <div class="cluster-grid">
 
       <!-- 1 — Product Marketing -->
-      <a href="#case-studies" class="cc">
+      <a href="#case-studies" class="cc cc-primary">
         <div class="cc-icon">
           <svg width="24" height="24" viewBox="0 0 36 36" fill="none">
             <path d="M18 4 L20 15 L30 18 L20 21 L18 32 L16 21 L6 18 L16 15 Z" stroke="#8a5a44" stroke-width="1.2" fill="none"/>
@@ -68,6 +81,12 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
         <div class="cc-q">"Why should people use this?"</div>
         <h3 class="cc-role">Product Marketing</h3>
         <div class="cc-cred">VTEX · iConnections · 5M+ reach</div>
+        <div class="cc-tags">
+          <span class="cc-tag">GTM Strategy</span>
+          <span class="cc-tag">Product Launches</span>
+          <span class="cc-tag">5M+ reach</span>
+          <span class="cc-tag">Lifecycle Marketing</span>
+        </div>
       </a>
 
       <!-- 2 — The Pivot -->
@@ -108,7 +127,7 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
       </a>
 
       <!-- 5 — Tech Writing -->
-      <a href="#tech-writing" class="cc">
+      <a href="#tech-writing" class="cc cc-primary">
         <div class="cc-icon">
           <svg width="24" height="24" viewBox="0 0 36 36" fill="none">
             <path d="M18 4 L20 15 L30 18 L20 21 L18 32 L16 21 L6 18 L16 15 Z" fill="#f48eb8" opacity="0.9"/>
@@ -117,10 +136,16 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
         <div class="cc-q">"How does tech work?"</div>
         <h3 class="cc-role">Tech Writing</h3>
         <div class="cc-cred">DevPortal Award · 35K+ devs</div>
+        <div class="cc-tags">
+          <span class="cc-tag">DevPortal Award</span>
+          <span class="cc-tag">API Docs</span>
+          <span class="cc-tag">35K+ devs</span>
+          <span class="cc-tag">Team Lead</span>
+        </div>
       </a>
 
       <!-- 6 — International Experiences -->
-      <a href="#abroad" class="cc cc--muted">
+      <a href="#abroad" class="cc cc-minor">
         <div class="cc-icon">
           <svg width="24" height="24" viewBox="0 0 36 36" fill="none">
             <circle cx="18" cy="18" r="13" stroke="#8a5a44" stroke-width="1.2"/>

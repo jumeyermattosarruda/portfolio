@@ -1,6 +1,6 @@
 ---
 id: building-now
-order: 7
+order: 8
 question: What am I building?
 title: "Side Quests"
 ariaLabel: "Side projects and personal work"

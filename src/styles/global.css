@@ -324,6 +324,81 @@ body {
   line-height: 1.5;
 }
 
+/* ─── Cluster hierarchy — primary / minor ────────────────────────────────── */
+.cc.cc-primary {
+  padding: 20px 18px;
+  background: #fdf8f5;
+}
+.cc.cc-primary .cc-role { font-size: 26px; }
+
+.cc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 7px;
+}
+.cc-tag {
+  font-size: 9px;
+  font-weight: 300;
+  color: var(--color-caramel);
+  background: var(--color-cream);
+  padding: 2px 7px;
+  border-radius: 10px;
+  border: 0.5px solid var(--color-border);
+}
+
+.cc.cc-minor {
+  padding: 12px 14px;
+  opacity: 0.6;
+}
+.cc.cc-minor .cc-role { font-size: 14px; }
+.cc.cc-minor .cc-q    { font-size: 9.5px; }
+.cc.cc-minor .cc-cred { font-size: 9px; }
+.cc.cc-minor .cc-icon { height: 18px; }
+.cc.cc-minor .cc-icon svg { width: 18px; height: 18px; }
+
+/* ─── Hero CTA ───────────────────────────────────────────────────────────── */
+.hero-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 4px;
+}
+
+.cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-espresso);
+  color: var(--color-linen);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  padding: 10px 18px;
+  border-radius: 24px;
+  text-decoration: none;
+  width: fit-content;
+  transition: background 0.2s ease;
+}
+.cta-primary:hover { background: #5a3a30; }
+
+.cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--color-caramel);
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  padding: 6px 0;
+  border-bottom: 0.5px solid var(--color-border);
+  width: fit-content;
+  transition: color 0.2s, border-color 0.2s;
+}
+.cta-secondary:hover { color: var(--color-espresso); border-color: var(--color-caramel); }
+
 /* ─── Sticky Nav ─────────────────────────────────────────────────────────── */
 .sticky-nav {
   position: fixed;

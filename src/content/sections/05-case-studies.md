@@ -1,6 +1,6 @@
 ---
 id: case-studies
-order: 5
+order: 1
 question: Why should people use this?
 title: "Product Marketing"
 ariaLabel: "Product Marketing experience"
