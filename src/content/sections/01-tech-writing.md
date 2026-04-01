@@ -1,6 +1,6 @@
 ---
 id: tech-writing
-order: 1
+order: 3
 question: How does tech work?
 title: "Tech Writing"
 ariaLabel: "Technical Writing and Developer Portal"

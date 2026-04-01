@@ -1,6 +1,6 @@
 ---
 id: why-pmm
-order: 4
+order: 7
 question: Why Product Marketing?
 title: "The Pivot"
 ariaLabel: "Career transition to Product Marketing"

@@ -1,6 +1,6 @@
 ---
 id: community
-order: 3
+order: 5
 question: Where is everyone?
 title: "TW Community"
 ariaLabel: "Tech Writing BR community"
