@@ -13,6 +13,17 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
       <span class="hl-last">Meyer</span>
     </h1>
 
+    <!-- Arch photo — between name and tagline -->
+    <div class="arch-photo">
+      <div class="arch-frame">
+        <img src={`${base}images/profile/profile-1.jpg`} alt="Juliana Meyer" />
+        <img src={`${base}images/profile/profile-2.jpg`} alt="Juliana Meyer" />
+        <img src={`${base}images/profile/profile-3.jpg`} alt="Juliana Meyer" />
+        <img src={`${base}images/profile/profile-4.jpg`} alt="Juliana Meyer" />
+        <img src={`${base}images/profile/profile-5.jpg`} alt="Juliana Meyer" />
+      </div>
+    </div>
+
     <p class="hl-tagline">GTM strategy for 40+ products.<br/>Tech PMM, fluent in GitHub<br/>and positioning.</p>
 
     <a href="https://www.linkedin.com/in/oijulianameyer/" target="_blank" rel="noopener noreferrer" class="cta-primary">
@@ -36,19 +47,6 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 
   </div>
 
-  <!-- ─── Center column — arch photo ───────────────────────────────── -->
-  <div class="hero-center">
-    <div class="arch-photo">
-      <div class="arch-frame">
-        <img src={`${base}images/profile/profile-1.jpg`} alt="Juliana Meyer" />
-        <img src={`${base}images/profile/profile-2.jpg`} alt="Juliana Meyer" />
-        <img src={`${base}images/profile/profile-3.jpg`} alt="Juliana Meyer" />
-        <img src={`${base}images/profile/profile-4.jpg`} alt="Juliana Meyer" />
-        <img src={`${base}images/profile/profile-5.jpg`} alt="Juliana Meyer" />
-      </div>
-    </div>
-  </div>
-
   <!-- ─── Right column — cluster nav ───────────────────────────────── -->
   <div class="hero-right">
 
@@ -61,8 +59,6 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
     <div class="cluster-grid">
 
       <!-- Row 1: large cells -->
-
-      <!-- Product Marketing -->
       <a href="#case-studies" class="cc cc-lg">
         <div class="cc-icon">
           <svg width="24" height="24" viewBox="0 0 36 36" fill="none">
@@ -81,7 +77,6 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
         </div>
       </a>
 
-      <!-- Tech Writing -->
       <a href="#tech-writing" class="cc cc-lg">
         <div class="cc-icon">
           <svg width="24" height="24" viewBox="0 0 36 36" fill="none">
@@ -100,8 +95,6 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
       </a>
 
       <!-- Row 2: small cells -->
-
-      <!-- Events -->
       <a href="#events" class="cc cc-sm">
         <div class="cc-icon">
           <svg width="24" height="24" viewBox="0 0 36 36" fill="none">
@@ -115,7 +108,6 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
         <div class="cc-cred">iConnections · 6 cities · 15K+ attendees</div>
       </a>
 
-      <!-- TW Community -->
       <a href="#community" class="cc cc-sm">
         <div class="cc-icon">
           <svg width="24" height="24" viewBox="0 0 36 36" fill="none">
@@ -127,7 +119,6 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
         <div class="cc-cred">Tech Writing BR · Co-founder · 300+</div>
       </a>
 
-      <!-- Podcasting -->
       <a href="#podcast" class="cc cc-sm">
         <div class="cc-icon">
           <svg width="24" height="20" viewBox="0 0 36 28" fill="none">
@@ -139,7 +130,7 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
         <div class="cc-cred">30+ episodes · The Manuscript</div>
       </a>
 
-    </div><!-- /cluster-grid -->
+    </div>
     </nav>
-  </div><!-- /hero-right -->
+  </div>
 </section>
