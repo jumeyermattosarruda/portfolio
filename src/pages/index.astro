@@ -5,18 +5,20 @@ import Topbar from '../components/Topbar.astro';
 import Hero from '../components/Hero.astro';
 import StickyNav from '../components/StickyNav.astro';
 import Section from '../components/Section.astro';
-import CountryTabs from '../components/CountryTabs.astro';
 import Footer from '../components/Footer.astro';
 
-const allSections = await getCollection('sections');
-const sections = allSections.sort((a, b) => a.data.order - b.data.order);
+import ProductMarketing from '../components/sections/ProductMarketing.astro';
+import Events from '../components/sections/Events.astro';
+import TechWriting from '../components/sections/TechWriting.astro';
+import Podcasting from '../components/sections/Podcasting.astro';
+import Community from '../components/sections/Community.astro';
+import Abroad from '../components/sections/Abroad.astro';
 
-const rendered = await Promise.all(
-  sections.map(async (entry) => {
-    const { Content } = await entry.render();
-    return { entry, Content };
-  })
-);
+const allSections = await getCollection('sections');
+const buildingNow = allSections.find((s) => s.data.id === 'building-now');
+const { Content: BuildingNowContent } = buildingNow ? await buildingNow.render() : { Content: null };
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
 <!doctype html>
@@ -86,36 +88,32 @@ const rendered = await Promise.all(
     <Hero />
     <StickyNav />
     <main>
-      {
-        rendered.map(({ entry, Content }, i) => (
-          <Section {...entry.data} reversed={i % 2 !== 0}>
-            <Content />
-            {entry.data.id === 'case-studies' && (
-              <div slot="extra" class="case-cards">
-                {entry.data.caseStudies?.map((card) => (
-                  <div class="case-card">
-                    <h3 class="case-card-title">{card.title}</h3>
-                    <p class="case-card-desc">{card.description}</p>
-                    {card.url && card.linkLabel && (
-                      <a
-                        href={card.url}
-                        class="case-card-link"
-                        target={card.url !== '#' ? '_blank' : undefined}
-                        rel={card.url !== '#' ? 'noopener noreferrer' : undefined}
-                      >
-                        {card.linkLabel}
-                      </a>
-                    )}
-                  </div>
-                ))}
-              </div>
-            )}
-            {entry.data.id === 'abroad' && (
-              <CountryTabs slot="extra" countries={entry.data.countries ?? []} />
-            )}
-          </Section>
-        ))
-      }
+
+      <!-- 1. Product Marketing -->
+      <ProductMarketing />
+
+      <!-- 2. Events (new) -->
+      <Events />
+
+      <!-- 3. Tech Writing -->
+      <TechWriting />
+
+      <!-- 4. Podcasting -->
+      <Podcasting />
+
+      <!-- 5. TW Community -->
+      <Community />
+
+      <!-- 6. International Experiences -->
+      <Abroad />
+
+      <!-- 7. Side Quests — unchanged from content collection -->
+      {buildingNow && BuildingNowContent && (
+        <Section {...buildingNow.data} reversed={false}>
+          <BuildingNowContent />
+        </Section>
+      )}
+
     </main>
     <Footer />
 
@@ -289,5 +287,19 @@ const rendered = await Promise.all(
       </p>
 
     </section>
+
+    <script>
+      // Expandable sections
+      document.querySelectorAll('.sec-expand-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const content = btn.nextElementSibling as HTMLElement | null;
+          const icon = btn.querySelector('.sec-expand-icon');
+          const expanded = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', String(!expanded));
+          if (content) content.hidden = expanded;
+          if (icon) icon.textContent = expanded ? '+' : '−';
+        });
+      });
+    </script>
   </body>
 </html>

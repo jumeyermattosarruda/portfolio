@@ -1,0 +1,51 @@
+---
+import CountryTabs from '../CountryTabs.astro';
+
+const countries = [
+  {
+    tab: "Mexico City",
+    role: "Event Logistics · AIESEC",
+    body: "Helped organize the most important AIESEC congress for committees across South, Central, and North America — 300+ delegates from 18 nationalities. Responsible for venue logistics, agenda management, keynote speaker coordination, and delegate experience."
+  },
+  {
+    tab: "Madrid",
+    role: "Language Student · AIL Madrid",
+    body: "Summer course in Spanish Language and Literature. Filed under: things that look like a detour and aren't."
+  },
+  {
+    tab: "Panama City",
+    role: "Partnerships Manager · Canal de Empresarias",
+    body: "Global entrepreneurship exchange at a startup inside Panama's Ciudad del Saber Innovation Center, focused on supporting women entrepreneurs. Responsible for building meaningful external partnerships and managing communications campaigns."
+  },
+  {
+    tab: "London",
+    role: "Summer Intern · Nexus Interactive Arts",
+    body: "Nexus Interactive Arts uses technology and multidisciplinary teams to create interactive digital installations for high-end clients. Sat in on pitches, observed the full lifecycle from treatment to budget to timeline, and contributed to project management and QA."
+  }
+];
+---
+<section id="abroad" aria-label="International work experience" class="section">
+
+  <div class="sec-meta">
+    <span class="sec-date">2016 — 2017</span>
+    <span class="sec-company">Various</span>
+    <span class="sec-industry">International</span>
+  </div>
+
+  <div class="sec-stats">
+    <div class="sec-stat-block">
+      <span class="sec-stat-n">4</span>
+      <span class="sec-stat-l">countries · Mexico · Spain · Panama · UK</span>
+    </div>
+  </div>
+
+  <p class="sec-q">"What is out there?"</p>
+  <h2 class="sec-title">International Experiences</h2>
+
+  <div class="sec-text" style="max-width: 600px; margin-bottom: 20px;">
+    Before any of the tech writing or product marketing work, I spent years deliberately putting myself in places where everything was new: different cultures, languages, challenges. None of it was linear. All of it was training for the kind of work I do now — enter an unfamiliar context, understand it quickly, and make something useful happen.
+  </div>
+
+  <CountryTabs countries={countries} />
+
+</section>
