@@ -69,10 +69,10 @@ body {
   fill: var(--color-caramel);
 }
 
-/* ─── Hero — two-column grid ─────────────────────────────────────────────── */
+/* ─── Hero — three-column grid ───────────────────────────────────────────── */
 .hero {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 240px 1fr;
   min-height: 620px;
   border-bottom: 0.5px solid var(--color-border);
   background: var(--color-linen);
@@ -85,7 +85,16 @@ body {
   flex-direction: column;
   justify-content: center;
   gap: 0;
+}
+
+/* ─── Hero Center — arch photo ───────────────────────────────────────────── */
+.hero-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 0.5px solid var(--color-border);
   border-right: 0.5px solid var(--color-border);
+  padding: 32px 0;
 }
 
 .hl-role {
@@ -127,15 +136,14 @@ body {
 
 /* ─── Arch photo ─────────────────────────────────────────────────────────── */
 .arch-photo {
-  width: 220px;
-  margin: 16px 0;
+  width: 200px;
 }
 
 .arch-frame {
-  width: 220px;
-  height: 336px;
+  width: 200px;
+  height: 305px;
   overflow: hidden;
-  border-radius: 140px 140px 12px 12px;
+  border-radius: 120px 120px 12px 12px;
   background: #e8d0c0;
   position: relative;
 }
@@ -178,6 +186,7 @@ body {
   font-style: italic;
   color: #8a5a44;
   line-height: 1.5;
+  margin-top: 20px;
   margin-bottom: 0;
 }
 
@@ -252,12 +261,20 @@ body {
   line-height: 1.4;
 }
 
-/* ─── Cluster grid ───────────────────────────────────────────────────────── */
+/* ─── Cluster grid — 5 cells, 2+3 row layout ─────────────────────────────── */
 .cluster-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(6, 1fr);
   flex: 1;
 }
+
+/* Row 1: PM (cols 1-3) + TW (cols 4-6) */
+.cc:nth-child(1) { grid-column: 1 / 4; }
+.cc:nth-child(2) { grid-column: 4 / 7; }
+/* Row 2: Events (cols 1-2) + Community (cols 3-4) + Podcasting (cols 5-6) */
+.cc:nth-child(3) { grid-column: 1 / 3; }
+.cc:nth-child(4) { grid-column: 3 / 5; }
+.cc:nth-child(5) { grid-column: 5 / 7; }
 
 .cc {
   padding: 18px 16px;
@@ -271,12 +288,19 @@ body {
 }
 
 .cc:hover { background: #fdf5f0; }
-.cc:nth-child(3n) { border-right: none; }
-.cc:nth-child(4),
-.cc:nth-child(5),
-.cc:nth-child(6) { border-bottom: none; }
 
-.cc--muted { opacity: 0.72; }
+/* Border-right: remove from last cell in each row */
+.cc:nth-child(2) { border-right: none; }
+.cc:nth-child(5) { border-right: none; }
+
+/* Border-bottom: remove from row 2 */
+.cc:nth-child(3),
+.cc:nth-child(4),
+.cc:nth-child(5) { border-bottom: none; }
+
+/* Row height differentiation */
+.cc-lg { min-height: 110px; }
+.cc-sm { min-height: 80px; }
 
 .cc-icon {
   margin-bottom: 10px;
@@ -311,16 +335,12 @@ body {
   line-height: 1.5;
 }
 
-/* ─── Cluster grid — all cells equal ─────────────────────────────────────── */
-.cc {
-  padding: 18px 16px;
-  background: #fffdf9;
-  opacity: 1;
-}
-.cc .cc-role { font-size: 24px; }
-.cc .cc-q    { font-size: 11px; }
-.cc .cc-cred { font-size: 10px; }
-.cc .cc-icon { height: 24px; }
+/* ─── Cluster cell base styles ───────────────────────────────────────────── */
+.cc { background: #fffdf9; }
+.cc-lg .cc-role { font-size: 24px; }
+.cc-sm .cc-q    { font-size: 12px; }
+.cc-sm .cc-role { font-size: 20px; }
+.cc-sm .cc-cred { font-size: 10px; }
 
 .cc-tags {
   display: flex;
@@ -653,34 +673,48 @@ body {
 @media (max-width: 768px) {
   .topbar { padding: 16px 24px; }
 
-  /* Hero */
-  .hero { grid-template-columns: 1fr; min-height: auto; }
+  /* Hero: single column — left col → center photo → right cluster */
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
 
   .hero-left {
-    padding: 40px 24px 32px;
-    border-right: none;
+    padding: 40px 24px 24px;
     border-bottom: 0.5px solid var(--color-border);
   }
 
-  .hero-right { padding: 32px 24px; }
+  .hero-center {
+    border-left: none;
+    border-right: none;
+    border-bottom: 0.5px solid var(--color-border);
+    padding: 28px 24px;
+    justify-content: flex-start;
+  }
 
-  .arch-photo { width: 160px; margin: 14px 0; }
-  .arch-frame { width: 160px; height: 244px; border-radius: 100px 100px 12px 12px; }
+  .hero-right { padding: 28px 24px; }
+
+  .arch-photo { width: 150px; }
+  .arch-frame { width: 150px; height: 229px; border-radius: 90px 90px 10px 10px; }
 
   .hl-first,
   .hl-last { font-size: 64px; }
+  .hl-tagline { margin-top: 16px; }
 
-  /* Cluster grid — 2 cols on mobile */
-  .cluster-grid { grid-template-columns: 1fr 1fr; }
+  /* Cluster grid — single column on mobile */
+  .cluster-grid { grid-template-columns: 1fr; }
 
-  /* Reset 3-col border rules */
-  .cc:nth-child(3n) { border-right: 0.5px solid var(--color-border); }
-  /* Apply 2-col rules */
-  .cc:nth-child(2n) { border-right: none; }
+  /* Reset explicit spans so cells flow naturally in 1 col */
+  .cc:nth-child(1),
+  .cc:nth-child(2),
+  .cc:nth-child(3),
   .cc:nth-child(4),
-  .cc:nth-child(5) { border-bottom: 0.5px solid var(--color-border); }
-  .cc:nth-child(6) { border-bottom: none; }
-  .cc-role { font-size: 18px; }
+  .cc:nth-child(5) { grid-column: auto; }
+
+  /* Reset all border-right/bottom, re-apply simple rules */
+  .cc { border-right: none; border-bottom: 0.5px solid var(--color-border); }
+  .cc:nth-child(5) { border-bottom: none; }
+  .cc-lg, .cc-sm { min-height: auto; }
 
   /* Nav */
   .sticky-nav { padding: 12px 24px; }
@@ -701,10 +735,19 @@ body {
   .sec-title { font-size: 36px; }
   .sec-stat  { font-size: 32px; }
 
+  /* Section body grid — collapse to single column */
+  .sec-body-grid { grid-template-columns: 1fr; grid-template-areas: "left" "right"; }
+  .sec-case-img { height: 120px; max-height: 220px; }
+
   /* Case cards, tabs, footer */
   .case-cards { grid-template-columns: 1fr; }
   .tab-labels { gap: 16px; flex-wrap: wrap; }
   .footer { padding: 40px 24px 32px; }
+}
+
+/* ─── Tablet — section collapses at 900px ───────────────────────────────── */
+@media (max-width: 900px) {
+  .sec-body-grid { grid-template-columns: 1fr; grid-template-areas: "left" "right"; }
 }
 
 /* ─── Section meta / stat components (B1) ───────────────────────────────── */
@@ -776,10 +819,13 @@ body {
 .sec-body-grid {
   display: grid;
   grid-template-columns: 1fr 300px;
+  grid-template-areas: "left right";
   gap: 48px;
   align-items: start;
   margin-bottom: 32px;
 }
+.sec-left  { grid-area: left; }
+.sec-panels { grid-area: right; }
 .sec-left .sec-text {
   font-size: 14px;
   font-weight: 300;
@@ -826,6 +872,15 @@ body {
   gap: 12px;
   margin-bottom: 24px;
 }
+
+/* Cases stacked inside the right column (sec-panels) */
+.sec-cases--stacked {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
 .sec-case-card {
   border: 0.5px solid #e8d8d0;
   border-radius: 8px;
@@ -834,13 +889,22 @@ body {
 }
 .sec-case-img {
   width: 100%;
-  height: 120px;
+  height: 140px;
+  max-height: 280px;
   background: #f0e6df;
   border-radius: 6px;
   margin-bottom: 12px;
   overflow: hidden;
+  flex-shrink: 0;
 }
-.sec-case-img img { width: 100%; height: 100%; object-fit: cover; }
+.sec-case-img img {
+  width: 100%;
+  height: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
 .sec-case-type {
   font-size: 9px;
   font-weight: 400;

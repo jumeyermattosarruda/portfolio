@@ -6,30 +6,15 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
   <!-- ─── Left column ──────────────────────────────────────────────── -->
   <div class="hero-left">
 
-    <!-- 1. Role label -->
     <span class="hl-role">Senior Product Marketing Manager</span>
 
-    <!-- 2. Name — full column width -->
     <h1 class="name-block">
       <span class="hl-first">Juliana</span>
       <span class="hl-last">Meyer</span>
     </h1>
 
-    <!-- 3. Arch photo — below name -->
-    <div class="arch-photo">
-      <div class="arch-frame">
-        <img src={`${base}images/profile/profile-1.jpg`} alt="Juliana Meyer" />
-        <img src={`${base}images/profile/profile-2.jpg`} alt="Juliana Meyer" />
-        <img src={`${base}images/profile/profile-3.jpg`} alt="Juliana Meyer" />
-        <img src={`${base}images/profile/profile-4.jpg`} alt="Juliana Meyer" />
-        <img src={`${base}images/profile/profile-5.jpg`} alt="Juliana Meyer" />
-      </div>
-    </div>
-
-    <!-- 4. Tagline -->
     <p class="hl-tagline">GTM strategy for 40+ products.<br/>Tech PMM, fluent in GitHub<br/>and positioning.</p>
 
-    <!-- 5. LinkedIn CTA -->
     <a href="https://www.linkedin.com/in/oijulianameyer/" target="_blank" rel="noopener noreferrer" class="cta-primary">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
@@ -37,7 +22,6 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
       Connect on LinkedIn
     </a>
 
-    <!-- Easter egg — Side Quests -->
     <a class="easter-egg" href="#building-now">
       <div class="ee-icon">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -52,7 +36,20 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 
   </div>
 
-  <!-- ─── Right column ─────────────────────────────────────────────── -->
+  <!-- ─── Center column — arch photo ───────────────────────────────── -->
+  <div class="hero-center">
+    <div class="arch-photo">
+      <div class="arch-frame">
+        <img src={`${base}images/profile/profile-1.jpg`} alt="Juliana Meyer" />
+        <img src={`${base}images/profile/profile-2.jpg`} alt="Juliana Meyer" />
+        <img src={`${base}images/profile/profile-3.jpg`} alt="Juliana Meyer" />
+        <img src={`${base}images/profile/profile-4.jpg`} alt="Juliana Meyer" />
+        <img src={`${base}images/profile/profile-5.jpg`} alt="Juliana Meyer" />
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Right column — cluster nav ───────────────────────────────── -->
   <div class="hero-right">
 
     <div class="hr-intro">
@@ -60,12 +57,13 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
       <div class="hr-invite">Explore the questions that guided my path ↓</div>
     </div>
 
-    <!-- 6-cell cluster grid -->
     <nav aria-label="Career chapters">
     <div class="cluster-grid">
 
-      <!-- 1 — Product Marketing -->
-      <a href="#case-studies" class="cc">
+      <!-- Row 1: large cells -->
+
+      <!-- Product Marketing -->
+      <a href="#case-studies" class="cc cc-lg">
         <div class="cc-icon">
           <svg width="24" height="24" viewBox="0 0 36 36" fill="none">
             <path d="M18 4 L20 15 L30 18 L20 21 L18 32 L16 21 L6 18 L16 15 Z" stroke="#8a5a44" stroke-width="1.2" fill="none"/>
@@ -83,45 +81,8 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
         </div>
       </a>
 
-      <!-- 2 — The Pivot -->
-      <a href="#case-studies" class="cc">
-        <div class="cc-icon">
-          <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
-            <rect x="4" y="10" width="10" height="18" rx="2" stroke="#8a5a44" stroke-width="1.2"/>
-            <rect x="18" y="4" width="10" height="24" rx="2" stroke="#f48eb8" stroke-width="1.2"/>
-          </svg>
-        </div>
-        <div class="cc-q">"Why Product Marketing?"</div>
-        <h3 class="cc-role">The Pivot</h3>
-        <div class="cc-cred">Tech → GTM · Venn diagram career</div>
-      </a>
-
-      <!-- 3 — TW Community -->
-      <a href="#community" class="cc">
-        <div class="cc-icon">
-          <svg width="24" height="24" viewBox="0 0 36 36" fill="none">
-            <path d="M18 4 L18 32 M4 18 L32 18 M7 7 L29 29 M29 7 L7 29" stroke="#8a5a44" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="cc-q">"Where is everyone?"</div>
-        <h3 class="cc-role">TW Community</h3>
-        <div class="cc-cred">Tech Writing BR · Co-founder · 300+</div>
-      </a>
-
-      <!-- 4 — Podcasting -->
-      <a href="#podcast" class="cc">
-        <div class="cc-icon">
-          <svg width="24" height="20" viewBox="0 0 36 28" fill="none">
-            <path d="M2 14 Q8 4 14 14 Q20 24 26 14 Q32 4 34 14" stroke="#8a5a44" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="cc-q">"How do others do this?"</div>
-        <h3 class="cc-role">Podcasting</h3>
-        <div class="cc-cred">30+ episodes · The Manuscript · Daily PMM</div>
-      </a>
-
-      <!-- 5 — Tech Writing -->
-      <a href="#tech-writing" class="cc">
+      <!-- Tech Writing -->
+      <a href="#tech-writing" class="cc cc-lg">
         <div class="cc-icon">
           <svg width="24" height="24" viewBox="0 0 36 36" fill="none">
             <path d="M18 4 L20 15 L30 18 L20 21 L18 32 L16 21 L6 18 L16 15 Z" fill="#f48eb8" opacity="0.9"/>
@@ -138,21 +99,47 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
         </div>
       </a>
 
-      <!-- 6 — International Experiences -->
-      <a href="#abroad" class="cc">
+      <!-- Row 2: small cells -->
+
+      <!-- Events -->
+      <a href="#events" class="cc cc-sm">
         <div class="cc-icon">
           <svg width="24" height="24" viewBox="0 0 36 36" fill="none">
-            <circle cx="18" cy="18" r="13" stroke="#8a5a44" stroke-width="1.2"/>
-            <path d="M5 18 Q11 11 18 18 Q25 25 31 18" stroke="#8a5a44" stroke-width="1" fill="none"/>
-            <path d="M10 10 Q14 6 18 10" stroke="#f48eb8" stroke-width="1" fill="none" stroke-linecap="round"/>
+            <rect x="6" y="8" width="24" height="22" rx="3" stroke="#8a5a44" stroke-width="1.2"/>
+            <path d="M6 15 L30 15" stroke="#8a5a44" stroke-width="1" />
+            <path d="M13 5 L13 11 M23 5 L23 11" stroke="#f48eb8" stroke-width="1.2" stroke-linecap="round"/>
           </svg>
         </div>
-        <div class="cc-q">"What is out there?"</div>
-        <h3 class="cc-role">International Experiences</h3>
-        <div class="cc-cred">Mexico · Spain · Panama · UK</div>
+        <div class="cc-q">"What does marketing look like in person?"</div>
+        <h3 class="cc-role">Events</h3>
+        <div class="cc-cred">iConnections · 6 cities · 15K+ attendees</div>
+      </a>
+
+      <!-- TW Community -->
+      <a href="#community" class="cc cc-sm">
+        <div class="cc-icon">
+          <svg width="24" height="24" viewBox="0 0 36 36" fill="none">
+            <path d="M18 4 L18 32 M4 18 L32 18 M7 7 L29 29 M29 7 L7 29" stroke="#8a5a44" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="cc-q">"Where is everyone?"</div>
+        <h3 class="cc-role">TW Community</h3>
+        <div class="cc-cred">Tech Writing BR · Co-founder · 300+</div>
+      </a>
+
+      <!-- Podcasting -->
+      <a href="#podcast" class="cc cc-sm">
+        <div class="cc-icon">
+          <svg width="24" height="20" viewBox="0 0 36 28" fill="none">
+            <path d="M2 14 Q8 4 14 14 Q20 24 26 14 Q32 4 34 14" stroke="#8a5a44" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="cc-q">"How do others do this?"</div>
+        <h3 class="cc-role">Podcasting</h3>
+        <div class="cc-cred">30+ episodes · The Manuscript</div>
       </a>
 
     </div><!-- /cluster-grid -->
-    </nav><!-- /career chapters nav -->
+    </nav>
   </div><!-- /hero-right -->
 </section>
