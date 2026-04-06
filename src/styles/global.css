@@ -72,10 +72,29 @@ body {
 /* ─── Hero — two-column grid ─────────────────────────────────────────────── */
 .hero {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1.5fr 1.5fr;
   min-height: 100vh;
   border-bottom: 0.5px solid var(--color-border);
   background: var(--color-linen);
+}
+
+/* ─── Hero Photo column (column 1) ──────────────────────────────────────── */
+.hero-photo {
+  border-right: 0.5px solid var(--color-border);
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-photo .arch-photo {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.hero-photo .arch-frame {
+  width: 100%;
+  height: 100%;
+  border-radius: 140px 140px 0 0;
 }
 
 /* ─── Hero Left ──────────────────────────────────────────────────────────── */
@@ -675,8 +694,14 @@ body {
   }
   .hero-right { padding: 32px 24px; }
 
-  .arch-photo { width: 160px; margin: 20px 0 16px; }
-  .arch-frame { width: 160px; height: 244px; border-radius: 100px 100px 12px 12px; }
+  .hero-photo {
+    height: 280px;
+    border-right: none;
+    border-bottom: 0.5px solid var(--color-border);
+  }
+  .hero-photo .arch-frame {
+    border-radius: 0;
+  }
 
   .hl-first,
   .hl-last { font-size: 64px; }
