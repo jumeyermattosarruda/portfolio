@@ -3,40 +3,41 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 <section id="case-studies" aria-label="Product Marketing experience" class="section">
 
-  <div class="sec-meta">
-    <span class="sec-date">2023 — present</span>
-    <span class="sec-company">iConnections</span>
-    <span class="sec-industry">FinTech · Alternative Investments</span>
-    <span class="sec-date">2023</span>
-    <span class="sec-company">VTEX</span>
-    <span class="sec-industry">E-commerce · SaaS</span>
-  </div>
-
-  <p class="sec-q">"Why should people use this?"</p>
-  <h2 class="sec-title">Product Marketing</h2>
-  <p class="sec-sub">GTM strategy, product launches, and lifecycle marketing — across two different growth stages.</p>
-
-  <div class="sec-stats">
-    <div class="sec-stat-block">
-      <span class="sec-stat-n">5M+</span>
-      <span class="sec-stat-l">reach · VTEX Vision Spring '24</span>
-    </div>
-    <div class="sec-stat-block">
-      <span class="sec-stat-n">40+</span>
-      <span class="sec-stat-l">products shipped to market</span>
-    </div>
-    <div class="sec-stat-block">
-      <span class="sec-stat-n">17</span>
-      <span class="sec-stat-l">products in single launch</span>
-    </div>
-    <div class="sec-stat-block">
-      <span class="sec-stat-n">300+</span>
-      <span class="sec-stat-l">media pieces in 30 days</span>
-    </div>
-  </div>
-
   <div class="sec-body-grid">
     <div class="sec-left">
+
+      <div class="sec-meta">
+        <span class="sec-date">2023 — present</span>
+        <span class="sec-company">iConnections</span>
+        <span class="sec-industry">FinTech · Alternative Investments</span>
+        <span class="sec-date">2023</span>
+        <span class="sec-company">VTEX</span>
+        <span class="sec-industry">E-commerce · SaaS</span>
+      </div>
+
+      <p class="sec-q">"Why should people use this?"</p>
+      <h2 class="sec-title">Product Marketing</h2>
+      <p class="sec-sub">GTM strategy, product launches, and lifecycle marketing — across two different growth stages.</p>
+
+      <div class="sec-stats">
+        <div class="sec-stat-block">
+          <span class="sec-stat-n">5M+</span>
+          <span class="sec-stat-l">reach · VTEX Vision Spring '24</span>
+        </div>
+        <div class="sec-stat-block">
+          <span class="sec-stat-n">40+</span>
+          <span class="sec-stat-l">products shipped to market</span>
+        </div>
+        <div class="sec-stat-block">
+          <span class="sec-stat-n">17</span>
+          <span class="sec-stat-l">products in single launch</span>
+        </div>
+        <div class="sec-stat-block">
+          <span class="sec-stat-n">300+</span>
+          <span class="sec-stat-l">media pieces in 30 days</span>
+        </div>
+      </div>
+
       <p class="sec-text">I've had the luck of doing PMM in two completely different contexts. At VTEX — a Brazilian-born e-commerce platform I joined at 300 employees and left at 1,300 — I worked campaign-driven GTM, with KPIs tied to lead acquisition, new contracts, and brand awareness. At iConnections, a US company making the shift to product-first, I moved to platform adoption, user research, and engagement. One outbound, one inbound. That range is the point: I learned how to read a business's growth stage and adapt the strategy, rather than repeat a playbook.</p>
       <div class="sec-links">
         <a href="https://www.youtube.com/watch?v=cNJBDHKKpMg" class="sec-link" target="_blank" rel="noopener noreferrer">VTEX Vision trailer ↗</a>
@@ -84,31 +85,33 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
           <span class="sec-pill sec-pill-tool">ChatGPT</span>
         </div>
       </div>
-      <div class="sec-cases sec-cases--stacked">
-        <div class="sec-case-card">
-          <div class="sec-case-img">
-            <img src={`${base}images/cases/allocator-pro.png`} alt="Allocator Pro" />
-          </div>
-          <div class="sec-case-type">Lifecycle marketing · B2B loyalty</div>
-          <h3 class="sec-case-title">Member Loyalty Program</h3>
-          <p class="sec-case-desc">Tier architecture, campaign strategy, in-platform experience, and premium event logistics — built from zero to live product.</p>
-          <a href="https://iconnections.io/allocator-pro/" class="sec-case-link" target="_blank" rel="noopener noreferrer">View Allocator Pro ↗</a>
-        </div>
-        <div class="sec-case-card">
-          <div class="sec-case-img">
-            <img src={`${base}images/cases/vtex-vision-teaser.gif`} alt="VTEX Vision" />
-          </div>
-          <div class="sec-case-type">Seasonal product release · GTM</div>
-          <h3 class="sec-case-title">17-Product Global Launch</h3>
-          <p class="sec-case-desc">Sole PMM coordinating 15+ teams and 4 external suppliers. 5M+ reach and 300+ media pieces in 30 days.</p>
-          <a href="https://www.linkedin.com/pulse/from-vision-reality-lessons-learned-launching-17-products-meyer-h3hrf/" class="sec-case-link" target="_blank" rel="noopener noreferrer">Behind the scenes ↗</a>
-        </div>
-        <div class="sec-case-card">
-          <div class="sec-case-type">Lifecycle marketing · Reengagement</div>
-          <h3 class="sec-case-title">Inactive User Reengagement</h3>
-          <p class="sec-case-desc">Structured exploration to identify messaging and value proposition for deeply inactive users — before committing to a full campaign build.</p>
-        </div>
+    </div>
+  </div>
+
+  <!-- Case card row — full width below the 2-col grid -->
+  <div class="sec-cases-row">
+    <div class="sec-case-card">
+      <div class="sec-case-img">
+        <img src={`${base}images/cases/allocator-pro.png`} alt="Allocator Pro" />
       </div>
+      <div class="sec-case-type">Lifecycle marketing · B2B loyalty</div>
+      <h3 class="sec-case-title">Member Loyalty Program</h3>
+      <p class="sec-case-desc">Tier architecture, campaign strategy, in-platform experience, and premium event logistics — built from zero to live product.</p>
+      <a href="https://iconnections.io/allocator-pro/" class="sec-case-link" target="_blank" rel="noopener noreferrer">View Allocator Pro ↗</a>
+    </div>
+    <div class="sec-case-card">
+      <div class="sec-case-img">
+        <img src={`${base}images/cases/vtex-vision-teaser.gif`} alt="VTEX Vision" />
+      </div>
+      <div class="sec-case-type">Seasonal product release · GTM</div>
+      <h3 class="sec-case-title">17-Product Global Launch</h3>
+      <p class="sec-case-desc">Sole PMM coordinating 15+ teams and 4 external suppliers. 5M+ reach and 300+ media pieces in 30 days.</p>
+      <a href="https://www.linkedin.com/pulse/from-vision-reality-lessons-learned-launching-17-products-meyer-h3hrf/" class="sec-case-link" target="_blank" rel="noopener noreferrer">Behind the scenes ↗</a>
+    </div>
+    <div class="sec-case-card">
+      <div class="sec-case-type">Lifecycle marketing · Reengagement</div>
+      <h3 class="sec-case-title">Inactive User Reengagement</h3>
+      <p class="sec-case-desc">Structured exploration to identify messaging and value proposition for deeply inactive users — before committing to a full campaign build.</p>
     </div>
   </div>
 

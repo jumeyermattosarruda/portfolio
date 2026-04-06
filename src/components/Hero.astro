@@ -3,17 +3,8 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 <section id="hero" class="hero">
 
-  <!-- ─── Left column ──────────────────────────────────────────────── -->
-  <div class="hero-left">
-
-    <span class="hl-role">Senior Product Marketing Manager</span>
-
-    <h1 class="name-block">
-      <span class="hl-first">Juliana</span>
-      <span class="hl-last">Meyer</span>
-    </h1>
-
-    <!-- Arch photo — between name and tagline -->
+  <!-- ─── Column 1: Photo carousel ──────────────────────────────────── -->
+  <div class="hero-photo">
     <div class="arch-photo">
       <div class="arch-frame">
         <img src={`${base}images/profile/profile-1.jpg`} alt="Juliana Meyer" />
@@ -23,6 +14,17 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
         <img src={`${base}images/profile/profile-5.jpg`} alt="Juliana Meyer" />
       </div>
     </div>
+  </div>
+
+  <!-- ─── Column 2: Name / credentials ────────────────────────────── -->
+  <div class="hero-left">
+
+    <span class="hl-role">Senior Product Marketing Manager</span>
+
+    <h1 class="name-block">
+      <span class="hl-first">Juliana</span>
+      <span class="hl-last">Meyer</span>
+    </h1>
 
     <p class="hl-tagline">GTM strategy for 40+ products.<br/>Tech PMM, fluent in GitHub<br/>and positioning.</p>
 
@@ -47,7 +49,7 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 
   </div>
 
-  <!-- ─── Right column — cluster nav ───────────────────────────────── -->
+  <!-- ─── Column 3: Cluster nav ──────────────────────────────────── -->
   <div class="hero-right">
 
     <div class="hr-intro">
