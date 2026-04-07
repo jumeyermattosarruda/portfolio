@@ -1,0 +1,165 @@
+---
+import '../styles/global.css';
+import Topbar from '../components/Topbar.astro';
+import Footer from '../components/Footer.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+
+const cases = [
+  {
+    image: `${base}images/cases/allocator-pro.png`,
+    alt: 'Allocator Pro',
+    label: 'Lifecycle marketing · B2B loyalty',
+    title: 'Member Loyalty Program',
+    link: '#',
+  },
+  {
+    image: `${base}images/cases/vtex-vision-teaser.gif`,
+    alt: 'VTEX Vision',
+    label: 'Seasonal product release · GTM',
+    title: '17-Product Global Launch',
+    link: '#',
+  },
+  {
+    image: null,
+    alt: '',
+    label: 'Lifecycle marketing · Reengagement',
+    title: 'Inactive User Reengagement',
+    link: '#',
+  },
+  {
+    image: `${base}images/cases/vtex-dev-portal.gif`,
+    alt: 'VTEX Developer Portal',
+    label: 'Developer portal · Award winner',
+    title: 'VTEX Developer Portal',
+    link: '#',
+  },
+  {
+    image: `${base}images/cases/daily-pmm.png`,
+    alt: 'Daily PMM',
+    label: 'Independent podcast · PMM education',
+    title: 'Daily PMM',
+    link: '#',
+  },
+  {
+    image: `${base}images/cases/manuscript.png`,
+    alt: 'The Manuscript',
+    label: 'Independent podcast · Tech & Writing',
+    title: 'The Manu<script>',
+    link: '#',
+  },
+  {
+    image: `${base}images/cases/tech-writing-br.png`,
+    alt: 'Tech Writing BR',
+    label: 'Community · Co-founder',
+    title: 'Tech Writing BR',
+    link: '#',
+  },
+  {
+    image: `${base}images/cases/FrameRoom.gif`,
+    alt: 'FrameRoom',
+    label: 'Side project · Browser app',
+    title: 'FrameRoom',
+    link: '#',
+  },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Projects — Juliana Meyer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Playfair+Display:ital,wght@0,400;1,400&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <Topbar />
+
+    <main class="projects-page">
+      <h1 class="projects-page-title">All Projects</h1>
+
+      <div class="projects-grid">
+        {cases.map((c) => (
+          <a href={c.link} class="sec-case-card projects-card" {...(c.link !== '#' ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
+            {c.image ? (
+              <div class="sec-case-img">
+                <img src={c.image} alt={c.alt} />
+              </div>
+            ) : (
+              <div class="sec-case-img sec-case-img--placeholder"></div>
+            )}
+            <div class="sec-case-type">{c.label}</div>
+            <h2 class="sec-case-title">{c.title}</h2>
+          </a>
+        ))}
+      </div>
+    </main>
+
+    <Footer />
+  </body>
+</html>
+
+<style>
+  .projects-page {
+    padding: 3rem 4rem 5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .projects-page-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--color-espresso);
+    margin-bottom: 2.5rem;
+    border-bottom: 0.5px solid var(--color-border);
+    padding-bottom: 1.5rem;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .projects-card {
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .projects-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(71, 45, 48, 0.08);
+  }
+
+  .sec-case-img--placeholder {
+    background: #f0e8e0;
+  }
+
+  @media (max-width: 1024px) {
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .projects-page {
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .projects-page-title {
+      font-size: 2rem;
+    }
+  }
+</style>

@@ -1,4 +1,5 @@
 ---
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 <section id="podcast" aria-label="Podcasting and content creation" class="section">
 
@@ -52,6 +53,26 @@
           <span class="sec-pill sec-pill-tool">Anchor</span>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- Case card row — full width below the 2-col grid -->
+  <div class="sec-cases-row">
+    <div class="sec-case-card">
+      <div class="sec-case-img">
+        <img src={`${base}images/cases/daily-pmm.png`} alt="Daily PMM" />
+      </div>
+      <div class="sec-case-type">Independent podcast · PMM education</div>
+      <h3 class="sec-case-title">Daily PMM</h3>
+      <a href="#" class="sec-case-link">View project ↗</a>
+    </div>
+    <div class="sec-case-card">
+      <div class="sec-case-img">
+        <img src={`${base}images/cases/manuscript.png`} alt="The Manuscript" />
+      </div>
+      <div class="sec-case-type">Independent podcast · Tech &amp; Writing</div>
+      <h3 class="sec-case-title">The Manu&lt;script&gt;</h3>
+      <a href="https://open.spotify.com/show/3fxF61LYR4BBDAv6YhZV5r" class="sec-case-link" target="_blank" rel="noopener noreferrer">Listen on Spotify ↗</a>
     </div>
   </div>
 
