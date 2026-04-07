@@ -1,4 +1,5 @@
 ---
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 <section id="community" aria-label="Tech Writing BR community" class="section">
 
@@ -45,6 +46,18 @@
           <span class="sec-pill">Developer Education</span>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- Case card row — full width below the 2-col grid -->
+  <div class="sec-cases-row sec-cases-row--single">
+    <div class="sec-case-card">
+      <div class="sec-case-img">
+        <img src={`${base}images/cases/tech-writing-br.png`} alt="Tech Writing BR" />
+      </div>
+      <div class="sec-case-type">Community · Co-founder</div>
+      <h3 class="sec-case-title">Tech Writing BR</h3>
+      <a href="https://www.techwriting.com.br/" class="sec-case-link" target="_blank" rel="noopener noreferrer">Visit community ↗</a>
     </div>
   </div>
 

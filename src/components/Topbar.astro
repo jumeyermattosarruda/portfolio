@@ -1,7 +1,9 @@
 ---
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 <header class="topbar">
   <a href="#hero" class="topbar-logo">juliana meyer</a>
+  <a href={`${base}projects`} class="topbar-all-projects">All Projects</a>
   <div class="topbar-icons">
     <a href="https://github.com/jumeyermattosarruda" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
